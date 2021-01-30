@@ -17,5 +17,6 @@
     "python.linting.pylintEnabled": false,
     "python.sortImports.path": "isort",
     "python.linting.mypyEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "python.pythonPath": "./.venv/bin/python3"
 }

@@ -5,8 +5,8 @@ __pycache__
 /dist
 /.tox
 **/.*_cache
-**/.venv-*
-**/giactivate
+**/.venv*
+**/activate
 
 # Coverage
 /.nyc_output
