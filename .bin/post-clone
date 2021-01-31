@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -e
+
+git_remote=$(git remote get-url origin)
+
+default_name=$(basename `pwd`)
+default_description="This is an awesome project"
+default_author=$(git config user.name)
+default_author_email=$(git config user.email)
+default_url="${git_remote/\.git/}"
+# ${firstString/Suzi/$secondString}
+
+read -e -p "Name: " -i "${default_name}" name
+read -e -p "Description: " -i "${default_description}" description
+read -e -p "Author name: " -i "${default_author}" author
+read -e -p "Author email: " -i "${default_author_email}" author_email
+read -e -p "URL: " -i "${default_url}" url
+
+# echo "================="
+# echo $name
+# echo $description
+# echo $author
+# echo $author_email
+# echo $url
+
+function find_and_replace() {
+    local str_find=$1
+    local str_replace=$2
+
+    # echo "find: $str_find"
+    # echo "replace: $str_replace"
+    # find . \( -type d -name .git -prune \) -o -type f -print0 | \
+    #     xargs -0 sed -i "s/$str_find/$str_replace/g"
+    # sed -e "s/${str_find}/${str_replace}/g" README.md
+    # sed -i "s/${str_find}/${str_replace}/g" setup.py
+    # grep -rl $str_find README.md --exclude-dir=.git --exclude-dir=.venv \
+    #     | xargs sed -i "s/$str_find/$str_replace/g"
+    find README.md -type f -exec sed -i '' -e "s/192.168.20.1/new.domain.com/" {} \;
+}
+
+find_and_replace "pytemplate" $name
+# find_and_replace "This is an awesome project!" $description
+# find_and_replace "Erik Nielsen" $author
+# find_and_replace "erik@312development.com" $author_email
+# find_and_replace "https://github.com/nielse63/pytemplate" $url

@@ -1,5 +1,6 @@
 [![](https://codecov.io/gh/nielse63/pytemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/nielse63/pytemplate)
 [![](https://img.shields.io/pypi/l/pytemplate.svg)](https://github.com/nielse63/pytemplate)
+[![Python app](https://github.com/nielse63/pytemplate/workflows/Python%20app/badge.svg)](https://github.com/nielse63/pytemplate/actions)
 
 # pytemplate
 
